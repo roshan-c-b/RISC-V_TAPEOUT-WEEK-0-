@@ -91,7 +91,7 @@ make
 sudo make install
 ```
 
-`[![Yosys](C:/Users/rosha/OneDrive/Documents/vsd-tapeout/yosys.png)](https://github.com/roshan-c-b/RISC-V_TAPEOUT-WEEK-0-)`
+`<img width="374" height="301" alt="Image" src="https://github.com/user-attachments/assets/8075584b-4852-43fe-97cc-1cdad9de7d46" />
 
 ---
 
@@ -104,7 +104,7 @@ sudo apt-get install iverilog
 
 `<img width="356" height="129" alt="Image" src="https://github.com/user-attachments/assets/aaf2ea64-f7c0-44ea-bf6a-83a1ed6b7fbe" />
 
-`
+
 
 ---
 
@@ -115,7 +115,7 @@ sudo apt-get update
 sudo apt install gtkwave
 ```
 
-`<img width="571" height="421" alt="Image" src="https://github.com/user-attachments/assets/9f33fff8-5386-4a0f-af7a-3a3cf656a5c5" />`
+`<img width="571" height="421" alt="Image" src="https://github.com/user-attachments/assets/9f33fff8-5386-4a0f-af7a-3a3cf656a5c5" />
 
 ---
 
@@ -126,7 +126,7 @@ $ sudo apt update
 $ sudo apt install ngspice
 ```
 
-`![Ngspice](C:/Users/rosha/OneDrive/Documents/vsd-tapeoutngspice.png)`
+`<img width="364" height="103" alt="Image" src="https://github.com/user-attachments/assets/31f0222d-98f8-43c2-8704-b8fc0782bfcc" />
 
 ---
 
@@ -157,7 +157,7 @@ make
 sudo make install
 ```
 
-`<img width="364" height="103" alt="Image" src="https://github.com/user-attachments/assets/4b18b7c7-c72c-4cc5-bc0a-e696ab934060" />`
+`<img width="1045" height="611" alt="Image" src="https://github.com/user-attachments/assets/46e4ee93-6672-41ee-926a-e305c5be8da7" />
 
 ---
 
