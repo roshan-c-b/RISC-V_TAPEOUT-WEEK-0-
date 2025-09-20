@@ -31,7 +31,7 @@
 
 ---
 
-### **Stage O4 – Physical Implementation**
+### **Stage O4-a – Physical Implementation**
 
 * Map netlist to silicon:
 
@@ -41,7 +41,7 @@
 
 ---
 
-### **Stage O4b – Post-Silicon Validation**
+### **Stage O4-b – Post-Silicon Validation**
 
 * Bring up silicon on board.
 * Reuse **C testbench** for validation.
@@ -78,6 +78,8 @@
 
 #### **Yosys — Synthesis**
 
+Yosys: A framework for RTL synthesis supporting Verilog.
+
 ```bash
 sudo apt-get update
 git clone https://github.com/YosysHQ/yosys.git
@@ -110,6 +112,8 @@ sudo apt-get install iverilog
 
 #### **GTKWave — Waveform Viewer**
 
+GTKWave: A waveform viewer to visualize simulation outputs from Verilog/VHDL.
+
 ```bash
 sudo apt-get update
 sudo apt install gtkwave
@@ -121,6 +125,8 @@ sudo apt install gtkwave
 
 #### **Ngspice — Analog / Mixed-Signal**
 
+Ngspice: A mixed-level circuit simulator for analog/digital systems.
+
 ```bash
 $ sudo apt update
 $ sudo apt install ngspice
@@ -131,6 +137,8 @@ $ sudo apt install ngspice
 ---
 
 #### **Magic — Layout Editor**
+
+Magic: A VLSI layout tool for editing and viewing IC layouts.
 
 ```bash
 # Install required dependencies
@@ -163,17 +171,49 @@ sudo make install
 
 #### **OpenLane — RTL → GDS**
 
-```bash
-# Install Docker
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker $USER
+OpenLane: An automated RTL-to-GDSII flow for digital ASIC design.
 
-# Fetch OpenLane
-git clone https://github.com/The-OpenROAD-Project/OpenLane.git
-cd OpenLane && make
+```bash
+## 5. OpenLane
+
+### Install Docker & Dependencies
+
+```bash
+# Update system
+sudo apt-get update
+sudo apt-get upgrade
+
+# Install dependencies
+sudo apt install -y build-essential python3 python3-venv python3-pip make git
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+# Install Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+# Verify Docker installation
+sudo docker run hello-world
+
+# Add user to Docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot
+
+# Verify again after reboot
+docker run hello-world
+Install OpenLane
+bash
+Copy code
+cd $HOME
+git clone https://github.com/The-OpenROAD-Project/OpenLane
+cd OpenLane
+make
+make test
 ```
 
-`![OpenLane](tools/img/openlane.png)`
+`<img width="541" height="35" alt="Image" src="https://github.com/user-attachments/assets/039289ac-7da0-48e0-a418-157c104dd831" />
 
 </details>
 
