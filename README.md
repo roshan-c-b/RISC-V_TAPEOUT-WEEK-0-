@@ -79,42 +79,51 @@
 #### **Yosys — Synthesis**
 
 ```bash
-sudo apt install -y build-essential git bison flex libreadline-dev gawk \
-  tcl-dev libffi-dev graphviz xdot
-git clone https://github.com/YosysHQ/yosys.git && cd yosys
-make -j$(nproc) && sudo make install
+sudo apt-get update
+git clone https://github.com/YosysHQ/yosys.git
+cd yosys
+sudo apt install make build-essential clang bison flex \
+libreadline-dev gawk tcl-dev libffi-dev git \
+graphviz xdot pkg-config python3 libboost-system-dev \
+libboost-python-dev libboost-filesystem-dev zlib1g-dev
+make config-gcc
+make
+sudo make install
 ```
 
-`![Yosys](C:/Users/rosha/OneDrive/Documents/vsd-tapeout/yosys.png)`
+`[![Yosys](C:/Users/rosha/OneDrive/Documents/vsd-tapeout/yosys.png)](https://github.com/roshan-c-b/RISC-V_TAPEOUT-WEEK-0-)`
 
 ---
 
 #### **Icarus Verilog — Simulation**
 
 ```bash
-sudo apt install -y iverilog
-iverilog -o sim.vvp tb.v && vvp sim.vvp
+sudo apt-get update
+sudo apt-get install iverilog
 ```
 
-`![Icarus](C:/Users/rosha/OneDrive/Documents/vsd-tapeout/iverilog.png)`
+`<img width="356" height="129" alt="Image" src="https://github.com/user-attachments/assets/aaf2ea64-f7c0-44ea-bf6a-83a1ed6b7fbe" />
+
+`
 
 ---
 
 #### **GTKWave — Waveform Viewer**
 
 ```bash
-sudo apt install -y gtkwave
-gtkwave dump.vcd
+sudo apt-get update
+sudo apt install gtkwave
 ```
 
-`![GTKWave](tools/img/gtkwave.png)`
+`<img width="571" height="421" alt="Image" src="https://github.com/user-attachments/assets/9f33fff8-5386-4a0f-af7a-3a3cf656a5c5" />`
 
 ---
 
 #### **Ngspice — Analog / Mixed-Signal**
 
 ```bash
-sudo apt install -y ngspice
+$ sudo apt update
+$ sudo apt install ngspice
 ```
 
 `![Ngspice](C:/Users/rosha/OneDrive/Documents/vsd-tapeoutngspice.png)`
@@ -124,12 +133,31 @@ sudo apt install -y ngspice
 #### **Magic — Layout Editor**
 
 ```bash
-sudo apt install -y m4 tcsh libx11-dev libtk-dev libcairo2-dev
-git clone https://github.com/RTimothyEdwards/magic.git && cd magic
-./configure && make -j$(nproc) && sudo make install
+# Install required dependencies
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+
+# Clone Magic repository
+git clone https://github.com/RTimothyEdwards/magic
+cd magic
+
+# Configure build
+./configure
+
+# Build Magic
+make
+
+# Install system-wide
+sudo make install
 ```
 
-`![Magic](C:/Users/rosha/OneDrive/Documents/vsd-tapeout/magic.png)`
+`<img width="364" height="103" alt="Image" src="https://github.com/user-attachments/assets/4b18b7c7-c72c-4cc5-bc0a-e696ab934060" />`
 
 ---
 
