@@ -72,7 +72,7 @@
 ### Requirements
 
 * Ubuntu 20.04+ (or WSL2/VM)
-* ≥ 4 cores, 6 GB RAM, 50 GB disk
+* ≥ 4 cores, 6 GB RAM, 100 GB disk
 
 ---
 
